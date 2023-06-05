@@ -9,7 +9,7 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 print("\n[\033[1;34m*\033[1;37m] Iniciando fuerza bruta")
-target = "http://10.10.11.160:5000/login"
+target = "http://<<IP>:<port>/login"
 dictionary = open(sys.argv[1])
 bar = log.progress("Probando usuario")
 time.sleep(1)

@@ -1,0 +1,6 @@
+<html>
+	<body>
+ 		<h1>XSS on HTML FILE</h1>
+ 		<script>alert("xssHacked")</script>
+	</body>
+</html>
