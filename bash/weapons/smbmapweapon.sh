@@ -1,3 +1,7 @@
+# NO FUNCIONA BIEN. CUANDO ENCUENTRA UN POSITIVO SE PARA
+# SI ENCUENTRA UN POSITIVO CON NULL, NO PRUEBA CON QWERTY.
+# UPDATE: MOSTRAR POR PANTALLA LOS RESULTADOS DE RECHECK
+
 #!/bin/bash
 
 # Comprobar si smbmap está instalado
@@ -68,7 +72,7 @@ num_vuln=0
 for ip in $(cat "$file1"); do
 
     # Ejecutar smbmap para el usuario null y guardar la salida en una variable
-    echo "[*] Checking Null User..."
+    echo "[*] Checking Null User for $ip..."
     output_null=$(smbmap -H "$ip")
 
     # Comprobar la salida y mostrar los mensajes en función del resultado
@@ -87,7 +91,7 @@ for ip in $(cat "$file1"); do
         echo -e "\e[32m[+] No vulnerable!\e[0m"
 
         # Ejecutar smbmap para el usuario qwerty y guardar la salida en una variable
-        echo "[*] Checking Qwerty User..."
+        echo "[*] Checking Qwerty User for $ip..."
         output_qwerty=$(smbmap -H "$ip" -u 'qwerty')
 
         # Comprobar la salida y mostrar los mensajes en función del resultado

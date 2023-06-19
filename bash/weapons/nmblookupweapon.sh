@@ -1,4 +1,5 @@
 #!/bin/bash
+# UPDATE: MOSTRAR POR PANTALLA LOS RESULTADOS DE RECHECK
 
 # Comprobar si nmblookup está instalado
 if ! command -v nmblookup &> /dev/null; then
